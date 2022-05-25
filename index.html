@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title> Fitt’s Law Experiment</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="active" data-page="home">
+      <div>
+        <span>
+          Fitt's Law Experiment
+        </span>
+        <span>
+          Enter trials number to start test
+        </span>
+        <form action="." onsubmit="startGame(event)">
+          <input
+            id="trialsNo"
+            type="number"
+            value="1"
+            min="1"
+            required
+          />
+          <input type="submit" value="Start Test" />
+        </form>
+      </div>
+    </div>
+    <div data-page="test">
+      <span id="trialsCountTxt">
+        Trial [#] Out Of [#]
+      </span>
+      <div id="blocksContainer">
+        <div id="leftBlock" onclick="handleLeftBlockClick(event)"></div>
+        <div id="rightBlock" onclick="handleRightBlockClick(event)"></div>
+      </div>
+    </div>
+    <div data-page="result">
+      <div>
+        <span>
+          Experiment Completed
+        </span>
+        <span>
+          You can download CSV file for the results
+        </span>
+        <div>
+          <button id="downloadBtn" onclick="handleDownloadBtnClick(event)">
+            Download CSV
+          </button>
+          <button id="tryAgainBtn" onclick="handleTryAgainBtnClick(event)">
+            Try Again
+          </button>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
